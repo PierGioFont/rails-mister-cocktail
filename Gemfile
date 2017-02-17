@@ -51,6 +51,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Cloudinary for pict uploads
+gem "cloudinary", "1.1.0"
+gem 'figaro'
+gem "attachinary", github: "assembler/attachinary"
+gem "jquery-fileupload-rails"
+###############
 gem 'rspec-rails', group: [ :test ]
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'

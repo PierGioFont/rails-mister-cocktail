@@ -9,6 +9,7 @@
     </div>
   <% end %>
   <%= f.input :name, placeholder: "Mojito" %>
+  <%= f.input :picture, as: :attachinary %>
   <%= f.submit "add this cocktail", class: "btn btn-primary" %>
 <% end %>
 <%= link_to "Back to the list", cocktails_path, class: "btn btn-primary" %>
