@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="head_color text-center">
+        <strong><%= @cocktail.name %></strong>
+      </div>
+      <p align="center">Recette</p>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.description %> - <%= dose.ingredient.name %> - <%= link_to "delete", dose_path(dose), method: :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p>Ici on ajoute les doses</p>
+<%= render 'cocktails/doses_form' %>
+
+<div class="text-center">
+  <%= link_to "Back to the list", cocktails_path, class: "btn btn-primary" %>
+  <p></p>
+</div>
+
