@@ -1,0 +1,6 @@
+<p></p>
+      <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+      <% if cocktail.picture? %>
+        <%= cl_image_tag cocktail.picture.path, width: 240, height: 180, crop: :fill %>
+      <% end %>
+      <p></p>

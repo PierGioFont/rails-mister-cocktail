@@ -3,9 +3,15 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-6 col-md-4" align="center">
-      <p></p>
-      <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
-      <p></p>
+      <% if cocktail.picture? %>
+        <div class="card"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url('<%= cl_image_path cocktail.picture.path, width: 240, height: 180, crop: :fill %>')">
+          <div class="card-category detail"><%= cocktail.name %></div>
+          <div class="card-description"></div>
+          <a class="card-link" href="<%= cocktail_path(cocktail.id) %>"></a>
+        </div>
+      <% end %>
     </div>
     <% end %>
   </div>
@@ -13,3 +19,5 @@
 <div class="foot text-center">
   <%= link_to "Add a new Cocktail", new_cocktail_path, class: "btn btn-primary" %>
 </div>
+
+
